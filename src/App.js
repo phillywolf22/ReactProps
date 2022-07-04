@@ -16,9 +16,13 @@ function App() {
 
     setName(name);
   };
+
+  const getNewName =()=> {
+    return getName
+  }
   return (
     <div className="App">
-      <InputForm grabName={setNewName} name={getName} />
+      <InputForm grabName={setNewName} name={getNewName} />
       <p> this is {getName} </p>
     </div>
   );
