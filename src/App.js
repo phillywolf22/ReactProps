@@ -1,6 +1,6 @@
-import logo from "./logo.svg";
-import "./App.css";
 
+import "./App.css";
+import Map from './Map';
 import React, { useState } from "react";
 
 import InputForm from "./InputForm";
@@ -22,9 +22,12 @@ function App() {
   }
   return (
     <div className="App">
+        <p> this is variable from parent : {getName} </p>
       <InputForm grabName={setNewName} name={getNewName} />
-      <p> this is {getName} </p>
+      <Map />
     </div>
+
+  
   );
 }
 

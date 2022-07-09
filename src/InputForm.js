@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+
+import Grandchild from "./Grandchild";
 
 const InputForm = props => {
   const changeName = e => {
@@ -11,14 +12,22 @@ const InputForm = props => {
     console.log("test add from git");
   };
 
+  const passToGC = () => {
+    return props.name()
+  } 
+
+  const variable1 = 'test pass the variable'
+
   return (
     <div>
       <form>
+        <p>from child :</p>
         <label>Enter your Name: </label>
-        <input type="text" onChange={changeName}></input>s
+        <input type="text" onChange={changeName}></input>
         <button type="button" onClick={alertMessage}>
           Submit
         </button>
+        <Grandchild nameGC= {passToGC} var1 = {variable1} />
       </form>
     </div>
   );
