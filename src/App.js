@@ -4,6 +4,7 @@ import Map from './Map';
 import React, { useState } from "react";
 
 import InputForm from "./InputForm";
+import InputSibling from "./InputSibling";
 function App() {
   const [getName, setName] = useState("Phil");
 
@@ -17,14 +18,17 @@ function App() {
     setName(name);
   };
 
-  const getNewName =()=> {
-    return getName
-  }
+  // const getNewName =()=> {
+  //   return getName
+  // }
+
+
   return (
     <div className="App">
-        <p> this is variable from parent : {getName} </p>
-      <InputForm grabName={setNewName} name={getNewName} />
-      <Map />
+        <p> this is variable from parent (App.js) : {getName} </p>
+      <InputForm grabName={setNewName} name={getName} />
+    <InputSibling name2={getName} />
+      {/* <Map /> */}
     </div>
 
   
